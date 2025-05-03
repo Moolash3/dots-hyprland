@@ -129,7 +129,6 @@ _<sup>Get yande.re and konachan images from sidebar</sup>_
  - [@midn8hustlr](https://github.com/midn8hustlr) for greatly improving the color generation system
  - AGS: [Aylur's config](https://github.com/Aylur/dotfiles/tree/ags-pre-ts), [kotontrion's config](https://github.com/kotontrion/dotfiles)
  - EWW: [fufexan's config](https://github.com/fufexan/dotfiles) (he thanks more people there btw)
- - AI bots for providing useful examples
 
 <div align="center">
     <h2>• stonks •</h2>
