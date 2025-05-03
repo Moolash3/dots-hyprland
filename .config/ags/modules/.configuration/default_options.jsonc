@@ -2,31 +2,6 @@
 // Don't expect every JSONC feature in... say, vscode, to work.
 {
     // General stuff
-    "ai": {
-        "defaultGPTProvider": "ollama_llama_3_2",
-        "defaultTemperature": 0.5,
-        "enhancements": true,
-        "charsEachUpdate": 50, // Lower = smoother update rate, but more update lag
-        "keep_alive": -1, // For ollama. -1 means forever
-        "useHistory": false,
-        "safety": true,
-        "writingCursor": " ...", // Warning: Using weird characters can mess up Markdown rendering
-        "proxyUrl": null, // Can be "socks5://127.0.0.1:9050" or "http://127.0.0.1:8080" for example. Leave it blank if you don't need it.
-        "extraGptModels": {
-            // Below is an example. Copy to user_options.jsonc and edit it
-            // The base url is conveniently ollama's btw
-            // "model_id": {
-            //     "name": "User-added model",
-            //     "logo_name": "ollama-symbolic",
-            //     "description": "A model added by the user",
-            //     "base_url": "http://localhost:11434/v1/chat/completions",
-            //     "key_get_url": "",
-            //     "requires_key": false,
-            //     "key_file": "api_key_file.txt",
-            //     "model": "model-name"
-            // },
-        }
-    },
     "animations": {
         "choreographyDelay": 35,
         "durationSmall": 110,
@@ -132,19 +107,9 @@
         },
         "pages": {
             "order": [
-                "apis",
                 "tools"
             ],
-            "defaultPage": "apis",
-            "apis": {
-                "order": [
-                    "gemini",
-                    "gpt",
-                    "waifu",
-                    "booru"
-                ],
-                "defaultPage": "gemini"
-            }
+            "defaultPage": "tools"
         },
         "quickToggles": {
             "order": [
@@ -166,7 +131,6 @@
             "commands": true,
             "mathResults": true,
             "directorySearch": true,
-            "aiSearch": true,
             "webSearch": true
         },
         "engineBaseUrl": "https://www.google.com/search?q=",
@@ -234,8 +198,6 @@
         "substitutions": {
             "code-url-handler": "visual-studio-code",
             "Code": "visual-studio-code",
-            "GitHub Desktop": "github-desktop",
-            "Minecraft* 1.20.1": "minecraft",
             "gnome-tweaks": "org.gnome.tweaks",
             "pavucontrol-qt": "pavucontrol",
             "wps": "wps-office2019-kprometheus",

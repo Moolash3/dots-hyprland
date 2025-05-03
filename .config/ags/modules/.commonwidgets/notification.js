@@ -18,7 +18,6 @@ function guessMessageType(summary) {
         'time': 'scheduleb',
         'installed': 'download',
         'update': 'update',
-        'ai response': 'neurology',
         'startswith:file': 'folder_copy', // Declarative startsWith check
     };
 

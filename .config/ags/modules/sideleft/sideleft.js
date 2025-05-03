@@ -1,4 +1,3 @@
-const { Gdk } = imports.gi;
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
@@ -7,8 +6,6 @@ const { execAsync, exec } = Utils;
 import { MaterialIcon } from '../.commonwidgets/materialicon.js';
 import { setupCursorHover } from '../.widgetutils/cursorhover.js';
 import toolBox from './toolbox.js';
-import apiWidgets from './apiwidgets.js';
-import { chatEntry } from './apiwidgets.js';
 import { TabContainer } from '../.commonwidgets/tabcontainer.js';
 import { checkKeybind } from '../.widgetutils/keybind.js';
 import { updateNestedProperty } from '../.miscutils/objects.js';
@@ -16,12 +13,6 @@ import { updateNestedProperty } from '../.miscutils/objects.js';
 const AGS_CONFIG_FILE = `${App.configDir}/user_options.jsonc`;
 
 const SIDEBARTABS = {
-    'apis': {
-        name: 'apis',
-        content: apiWidgets,
-        materialIcon: 'api',
-        friendlyName: 'APIs',
-    },
     'tools': {
         name: 'tools',
         content: toolBox,
@@ -125,33 +116,6 @@ export default () => {
                     expandButton.attribute.toggle(expandButton);
                 // if (checkKeybind(event, userOptions.keybinds.sidebar.pin))
                 //     pinButton.attribute.toggle(pinButton);
-
-                if (widgetContent.attribute.names[widgetContent.attribute.shown.value] == 'APIs') { // If api tab is focused
-                    // Focus entry when typing
-                    if ((
-                        !(event.get_state()[1] & Gdk.ModifierType.CONTROL_MASK) &&
-                        event.get_keyval()[1] >= 32 && event.get_keyval()[1] <= 126 &&
-                        widget != chatEntry && event.get_keyval()[1] != Gdk.KEY_space)
-                        ||
-                        ((event.get_state()[1] & Gdk.ModifierType.CONTROL_MASK) &&
-                            event.get_keyval()[1] === Gdk.KEY_v)
-                    ) {
-                        chatEntry.grab_focus();
-                        const buffer = chatEntry.get_buffer();
-                        buffer.set_text(buffer.text + String.fromCharCode(event.get_keyval()[1]), -1);
-                        buffer.place_cursor(buffer.get_iter_at_offset(-1));
-                    }
-                    // Switch API type
-                    else if (checkKeybind(event, userOptions.keybinds.sidebar.apis.nextTab)) {
-                        const toSwitchTab = widgetContent.attribute.children[widgetContent.attribute.shown.value];
-                        toSwitchTab.nextTab();
-                    }
-                    else if (checkKeybind(event, userOptions.keybinds.sidebar.apis.prevTab)) {
-                        const toSwitchTab = widgetContent.attribute.children[widgetContent.attribute.shown.value];
-                        toSwitchTab.prevTab();
-                    }
-                }
-
             })
         ,
     });
