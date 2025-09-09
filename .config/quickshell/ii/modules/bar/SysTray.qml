@@ -4,6 +4,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.SystemTray
+import "." as Bar
 
 Item {
     id: root
@@ -58,7 +59,7 @@ Item {
                 }
             }
 
-            StyledPopup {
+            Bar.StyledPopup {
                 hoverTarget: trayOverflowButton
                 active: root.trayOverflowOpen
                 popupBackgroundMargin: 300 // This should be plenty... makes sure tooltips don't get cutoff (easily)
