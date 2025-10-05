@@ -38,7 +38,6 @@ darklyrc
 dolphinrc
 kdeglobals
 konsolerc
-starship.toml
 thorium-flags.conf
 )
 
