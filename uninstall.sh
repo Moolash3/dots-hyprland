@@ -23,7 +23,7 @@ set -e
 # Undo Step 3: Removing copied config and local folders
 printf "${STY_CYAN}Removing copied config and local folders...\n${STY_RESET}"
 
-for i in ags fish fontconfig foot fuzzel hypr mpv wlogout "starship.toml" rubyshot
+for i in ags fish fontconfig foot fuzzel hypr mpv wlogout rubyshot
   do v rm -rf "$XDG_CONFIG_HOME/$i"
 done
 for i in "glib-2.0/schemas/com.github.GradienceTeam.Gradience.Devel.gschema.xml" "gradience"

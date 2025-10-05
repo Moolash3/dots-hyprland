@@ -270,17 +270,4 @@ ContentPage {
             }
         }
     }
-
-    ContentSection {
-        icon: "cloud"
-        title: Translation.tr("Weather")
-        ConfigSwitch {
-            buttonIcon: "check"
-            text: Translation.tr("Enable")
-            checked: Config.options.bar.weather.enable
-            onCheckedChanged: {
-                Config.options.bar.weather.enable = checked;
-            }
-        }
-    }
 }
