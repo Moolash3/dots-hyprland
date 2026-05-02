@@ -155,12 +155,6 @@ set_thumbnail_path() {
     fi
 }
 
-categorize_wallpaper() {
-    img_cat=$("$SCRIPT_DIR/../ai/gemini-categorize-wallpaper.sh" "$1")
-    # notify-send "Wallpaper category" "$img_cat"
-    echo "$img_cat" > "$STATE_DIR/user/generated/wallpaper/category.txt"
-}
-
 switch() {
     imgpath="$1"
     mode_flag="$2"
