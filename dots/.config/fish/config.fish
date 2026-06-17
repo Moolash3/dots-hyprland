@@ -17,3 +17,5 @@ if status is-interactive
         alias ssh 'kitten ssh'
     end
 end
+
+set -gx GPG_TTY (tty)
