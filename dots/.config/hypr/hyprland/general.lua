@@ -55,7 +55,7 @@ hl.config({
 
         col = {
             active_border = "rgba(0DB7D455)",
-            inactive_border = "rgba(31313600)"
+            inactive_border = "rgba(0DB7D455)"
         },
         resize_on_border = true,
 
@@ -100,7 +100,7 @@ hl.config({
 
         },
         -- Dim
-        dim_inactive = true,
+        dim_inactive = false,
         dim_strength = 0.05,
         dim_special = 0.2
     },
